@@ -3,6 +3,9 @@
 
 :root {
     --primary-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --lite-color: #f4f4f4;
 }
 * {
     box-sizing: border-box;
@@ -84,7 +87,7 @@ img {
     right: 0;
     left: 0;
     background: #fff;
-    transform: skewY(-3deg);
+    transform: skewX(-3deg);
     -webkit-transform: skewY(-3deg);
     -moz-transform: skewY(-3deg);
     -ms-transform: skewY(-3deg);
@@ -153,3 +156,100 @@ img {
 }
 /* states end */
 
+
+/* cli */
+
+.cli .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1frs);
+}
+
+.cli .grid > *:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1/ span 2;
+}
+
+
+/* cloud */
+
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+/* languages */
+
+.languages .flex {
+    flex-wrap: wrap;
+}
+
+.languages .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease;
+}
+
+.languages .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.languages .card:hover {
+    transform: translateY(-15px);
+}
+
+
+
+/* Foooter  */
+
+.footer .social a {
+    margin: 0 10px;
+}
+
+
+/* Tablates and under */
+@media (max-width: 768px ) {
+    .grid,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,
+    .cloud .grid
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase {
+        height: auto;
+    }
+
+    .showcase-text {
+        text-align: center;
+        margin-top: 40px;
+    }
+    .showcase form {
+        justify-self: center;
+        margin: auto;
+    }
+
+    .cli .grid > *:first-child {
+        grid-column:1;
+        grid-row: 1;
+    }
+}
+
+/* For MObile */
+@media (max-width: 500px ) {
+    .navbar {
+        height: 110px;
+    }
+
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        padding: 10px;
+        background-color: rgba(0,0,0,0.1);
+    }
+}
